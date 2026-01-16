@@ -46,13 +46,22 @@ publishing {
                 classifier = "linux-x86_64"
             }
             pom {
+                name = "libCZI"
+                description = "An Open Source Cross-Platform C++ library to read and write CZI."
+                url = "https://zeiss.github.io/libczi/"
                 licenses {
                     license {
-                        name.set("LGPL")
-                        url.set("https://www.gnu.org/licenses/lgpl-3.0.en.html")
+                        name = "LGPL"
+                        url = "https://www.gnu.org/licenses/lgpl-3.0.en.html"
                     }
+                }
+                scm {
+                    connection = "scm:git:git://github.com/ZEISS/libczi.git"
+                    developerConnection = "scm:git:ssh://github.com/ZEISS/libczi.git"
+                    url = "https://zeiss.github.io/libczi/"
                 }
             }
         }
+
     }
 }
