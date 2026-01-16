@@ -29,10 +29,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = group.toString()
             version = version.toString()
-            artifact(file("libCZI-natives.jar")) {
-                classifier = "macos-aarch64"
-            }
-
+            artifact(file("libCZI-natives.jar"))
             artifact(file("libCZI-natives-macos-aarch64.jar")) {
                 classifier = "macos-aarch64"
             }
