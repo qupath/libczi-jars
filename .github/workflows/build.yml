@@ -80,6 +80,11 @@ jobs:
       with:
         path: LICENSES
         name: LICENSES
+    - uses: actions/upload-artifact@v4
+      if: matrix.os == 'ubuntu-latest'
+      with:
+        path: COPYING
+        name: COPYING
   
   merged-jar:
     needs: lib
@@ -95,6 +100,10 @@ jobs:
       with:
         name: LICENSES
         path: LICENSES
+    - uses: actions/download-artifact@v7
+      with:
+        name: COPYING
+        path: COPYING
 
     - name: Make jar
       run: |
@@ -102,7 +111,7 @@ jobs:
         for f in libczi-binaries-*; do
           mv -- "$f" "${f#libczi-binaries-}"
         done
-        jar cvf libCZI-natives.jar ../LICENSES linux-x86-64 macos-aarch64 macos-x86-64 windows-x86-64
+        jar cvf libCZI-natives.jar ../LICENSES ../COPYING linux-x86-64 macos-aarch64 macos-x86-64 windows-x86-64
     - uses: actions/upload-artifact@v4
       with:
         path: natives/libCZI-natives.jar
