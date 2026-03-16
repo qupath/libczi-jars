@@ -1,3 +1,5 @@
+name: Build libCZI jars
+
 on:
   workflow_dispatch:
 
