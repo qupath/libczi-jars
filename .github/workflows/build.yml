@@ -58,7 +58,6 @@ jobs:
         find libczi -name '*.so' -exec cp {} ${{ matrix.name }}-${{matrix.arch}} \;
         find libczi -name '*.dylib' -exec cp {} ${{ matrix.name }}-${{matrix.arch}} \;
         find libczi -name '*.dll' -exec cp {} ${{ matrix.name }}-${{matrix.arch}} \;
-        mv libczi/LICENSES ./
 
     - uses: actions/upload-artifact@v4
       with:
@@ -78,12 +77,12 @@ jobs:
     - uses: actions/upload-artifact@v4
       if: matrix.os == 'ubuntu-latest'
       with:
-        path: LICENSES
+        path: libczi/LICENSES
         name: LICENSES
     - uses: actions/upload-artifact@v4
       if: matrix.os == 'ubuntu-latest'
       with:
-        path: COPYING
+        path: libczi/COPYING
         name: COPYING
   
   merged-jar:
