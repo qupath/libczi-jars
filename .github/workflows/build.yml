@@ -69,7 +69,7 @@ jobs:
     - name: Make jar
       run: |
         mkdir jars
-        jar cvf libCZI-natives-${{matrix.name}}-${{matrix.arch}}.jar ${{ matrix.name }}-${{matrix.arch}} LICENSES
+        jar cvf libCZI-natives-${{matrix.name}}-${{matrix.arch}}.jar ${{ matrix.name }}-${{matrix.arch}} libczi/LICENSES
 
     - uses: actions/upload-artifact@v4
       with:
