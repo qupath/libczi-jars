@@ -111,7 +111,7 @@ jobs:
         for f in libczi-binaries-*; do
           mv -- "$f" "${f#libczi-binaries-}"
         done
-        jar cvf libCZI-natives.jar ../LICENSES ../COPYING/COPYING linux-x86-64 macos-aarch64 macos-x86-64 windows-x86-64
+        jar cvf libCZI-natives.jar ../LICENSES ../COPYING linux-x86-64 macos-aarch64 macos-x86-64 windows-x86-64
     - uses: actions/upload-artifact@v4
       with:
         path: natives/libCZI-natives.jar
